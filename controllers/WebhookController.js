@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = (app, route) => {
 
   app.post("/webhook/release", (req, res) => {
-    fs.writeFile("webhookRelease.json", JSON.stringify(req.body), function(err) {
+    fs.writeFile("webhookRelease.json", JSON.stringify(req.body, null, 4), function(err) {
       if (err) {
         console.log(err);
       } else {
